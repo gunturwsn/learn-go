@@ -1,0 +1,1 @@
+This is my journey to learn the Go programming language, Happy Learning!
