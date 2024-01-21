@@ -2,6 +2,8 @@ package helper
 
 import (
 	"fmt"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 	"testing"
 )
 
@@ -20,7 +22,7 @@ func TestHelloWorldBudi(t *testing.T) {
 	result := HelloWorld("Budi")
 	if result != "Hello Budi" {
 		// error
-		t.Error("Result mush be 'Hello Budi'")
+		t.Error("Result must be 'Hello Budi'")
 	}
 	fmt.Println("TestHelloWorldBudi Done")
 }
@@ -29,7 +31,21 @@ func TestHelloWorldHari(t *testing.T) {
 	result := HelloWorld("Hari")
 	if result != "Hello Hari" {
 		// error
-		t.Fatal("Result mush be 'Hello Hari'")
+		t.Fatal("Result must be 'Hello Hari'")
 	}
 	fmt.Println("TestHelloWorldHari Done")
+}
+
+func TestHelloWorldAssertion(t *testing.T) {
+	// assert will call Fail()
+	result := HelloWorld("Budi")
+	assert.Equal(t, "Hello Budi", result, "Result must be 'Hello Budi'")
+	fmt.Println("TestHelloWorld with Assertion Done")
+}
+
+func TestHelloWorldRequire(t *testing.T) {
+	// require will call FailNow()
+	result := HelloWorld("Budi")
+	require.Equal(t, "Hello Budi", result, "Result must be 'Hello Budi'")
+	fmt.Println("TestHelloWorld with Require Done")
 }
