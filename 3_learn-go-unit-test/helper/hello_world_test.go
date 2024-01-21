@@ -1,6 +1,9 @@
 package helper
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 /**
 *	1. cd to package test
@@ -17,14 +20,16 @@ func TestHelloWorldBudi(t *testing.T) {
 	result := HelloWorld("Budi")
 	if result != "Hello Budi" {
 		// error
-		panic("Result is not Hello Budi")
+		t.Error("Result mush be 'Hello Budi'")
 	}
+	fmt.Println("TestHelloWorldBudi Done")
 }
 
 func TestHelloWorldHari(t *testing.T) {
 	result := HelloWorld("Hari")
 	if result != "Hello Hari" {
 		// error
-		panic("Result is not Hello Hari")
+		t.Fatal("Result mush be 'Hello Hari'")
 	}
+	fmt.Println("TestHelloWorldHari Done")
 }
