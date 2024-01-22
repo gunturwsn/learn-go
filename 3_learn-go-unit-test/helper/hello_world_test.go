@@ -19,6 +19,22 @@ import (
 *	5. command 'go test -v ./...' -> running test from previous package to package test
 **/
 
+func TestMain(m *testing.M) {
+	/**
+	* TestMain only working in one package.
+	* If you want to test outside the current package (e.g. helper),
+	* you have to create another TestMain in the package you want to test.
+	 */
+
+	// before
+	fmt.Println("Before unit test")
+
+	m.Run()
+
+	// after
+	fmt.Println("After unit test")
+}
+
 func TestHelloWorldBudi(t *testing.T) {
 	result := HelloWorld("Budi")
 	if result != "Hello Budi" {
