@@ -91,3 +91,29 @@ func TestSubTest(t *testing.T) {
 	* example -> 'go test -v -run=TestSubTest/Hari'
 	 */
 }
+
+func TestHelloWorldTable(t *testing.T) {
+	tests := []struct {
+		name     string
+		request  string
+		expected string
+	}{
+		{
+			name:     "HelloWorld(Budi)",
+			request:  "Budi",
+			expected: "Hello Budi",
+		},
+		{
+			name:     "HelloWorld(Hari)",
+			request:  "Hari",
+			expected: "Hai Hari",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			result := HelloWorld(test.request)
+			require.Equal(t, test.expected, result)
+		})
+	}
+}
