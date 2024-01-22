@@ -75,3 +75,19 @@ func TestSkip(t *testing.T) {
 	result := HelloWorld("Budi")
 	require.Equal(t, "Hello Budi", result, "Result must be 'Hello Budi'")
 }
+
+func TestSubTest(t *testing.T) {
+	t.Run("Budi", func(t *testing.T) {
+		result := HelloWorld("Budi")
+		require.Equal(t, "Hello Budi", result, "Result must be 'Hello Budi'")
+	})
+	t.Run("Hari", func(t *testing.T) {
+		result := HelloWorld("Hari")
+		require.Equal(t, "Hai Hari", result, "Result must be 'Hai Hari'")
+	})
+
+	/**
+	* if you only want to run one subtest, using 'go test -v -run=<TestFunction>/<SubTestName>'
+	* example -> 'go test -v -run=TestSubTest/Hari'
+	 */
+}
