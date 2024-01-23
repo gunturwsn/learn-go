@@ -129,3 +129,22 @@ func BenchmarkHelloWorld(b *testing.B) {
 		HelloWorld("Budi")
 	}
 }
+
+func BenchmarkHelloWorldSub(b *testing.B) {
+	/** running sub benchmark command:
+	* 'go test -v -run=NotMathUnitTest -bench=<BencmarkName>/<SubBenchmarkName>'
+	* e.g: 'go test -v -run=NotMathUnitTest -bench=BenchmarkHelloWorldSub/Budi'
+	 */
+
+	b.Run("Budi", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			HelloWorld("Budi")
+		}
+	})
+
+	b.Run("Hari", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			HelloWorld("Hari")
+		}
+	})
+}
