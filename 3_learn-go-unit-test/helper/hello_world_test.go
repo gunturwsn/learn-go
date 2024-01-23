@@ -117,3 +117,15 @@ func TestHelloWorldTable(t *testing.T) {
 		})
 	}
 }
+
+func BenchmarkHelloWorld(b *testing.B) {
+	/* running benchmark command:
+	* 'go test -v -bench=.' 									-> running all benchmark in package
+	* 'go test -v -run=NotMathUnitTest -bench=.' 				-> running benchmark without unit test
+	* 'go test -v -run=NotMathUnitTest -bench=<BenchmarkName>' 	-> running benchmark selected
+	* 'go test -v -bench=. ./...' 								-> running benchmark from root package and running in all package
+	 */
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Budi")
+	}
+}
