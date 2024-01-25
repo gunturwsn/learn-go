@@ -34,3 +34,23 @@ func GiveMeResponse(channel chan string) {
 	time.Sleep(2 * time.Second)
 	channel <- "Hello World!"
 }
+
+func TestInOutChannel(t *testing.T) {
+	channel := make(chan string)
+	defer close(channel)
+
+	go OnlyIn(channel)  // send data to the channel
+	go OnlyOut(channel) // receive data from the channel
+
+	time.Sleep(5 * time.Second)
+}
+
+func OnlyIn(channel chan<- string) {
+	time.Sleep(3 * time.Second)
+	channel <- "Hello World!!"
+}
+
+func OnlyOut(channel <-chan string) {
+	data := <-channel
+	fmt.Println(data)
+}
