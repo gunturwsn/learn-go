@@ -1,0 +1,5 @@
+Repository MySQL:
+https://github.com/go-sql-driver/mysql/
+
+1. install module MySQL:
+go get -u github.com/go-sql-driver/mysql
