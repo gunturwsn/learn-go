@@ -3,3 +3,12 @@ https://github.com/go-sql-driver/mysql/
 
 1. install module MySQL:
 go get -u github.com/go-sql-driver/mysql
+
+2. CREATE DATABASE learn_go_database;
+
+3. create table customer:
+   CREATE TABLE learn_go_database.customer(
+   	id VARCHAR(100) NOT NULL,
+   	name VARCHAR(100) NOT NULL,
+   	PRIMARY KEY (id)
+   ) ENGINE = InnoDB;
