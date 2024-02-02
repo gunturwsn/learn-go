@@ -34,3 +34,13 @@ go get -u github.com/go-sql-driver/mysql
     VALUES ('hari', 'Hari', 'hari@gmail.com', 90000, 4.5, '1998-8-8', false);
     INSERT INTO learn_go_database.customer(id, name, email, balance, rating, birth_date, married)
     VALUES ('yaya', 'Yaya', NULL, 80000, 3.5, NULL, true);
+
+7.  create table learn_go_database.user -> SQL Injection:
+    CREATE TABLE INSERT INTO learn_go_database.user(
+    	username VARCHAR(100) NOT NULL,
+        password VARCHAR(100) NOT NULL,
+        PRIMARY KEY (username)
+    ) ENGINE = InnoDB;
+
+8.  insert data into the table learn_go_database.user
+    INSERT INTO learn_go_database.user(username, password) VALUES ('admin','admin');
