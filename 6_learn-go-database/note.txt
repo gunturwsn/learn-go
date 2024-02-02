@@ -12,3 +12,25 @@ go get -u github.com/go-sql-driver/mysql
    	name VARCHAR(100) NOT NULL,
    	PRIMARY KEY (id)
    ) ENGINE = InnoDB;
+
+4. delete all data in the table learn_go_database.customer:
+    SET SQL_SAFE_UPDATES = 0;
+    DELETE FROM learn_go_database.customer;
+    SET SQL_SAFE_UPDATES = 1;
+
+5. alter table learn_go_database.customer:
+    ALTER TABLE learn_go_database.customer
+    	ADD COLUMN email		VARCHAR(100),
+        ADD COLUMN balance		INTEGER		DEFAULT 0,
+    	ADD COLUMN rating		DOUBLE		DEFAULT 0.0,
+        ADD COLUMN created_at	TIMESTAMP	DEFAULT CURRENT_TIMESTAMP,
+        ADD COLUMN birth_date	DATE,
+        ADD COLUMN married		BOOLEAN		DEFAULT false;
+
+6. insert data into the table learn_go_database.customer:
+    INSERT INTO learn_go_database.customer(id, name, email, balance, rating, birth_date, married)
+    VALUES ('budi', 'Budi', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true);
+    INSERT INTO learn_go_database.customer(id, name, email, balance, rating, birth_date, married)
+    VALUES ('hari', 'Hari', 'hari@gmail.com', 90000, 4.5, '1998-8-8', false);
+    INSERT INTO learn_go_database.customer(id, name, email, balance, rating, birth_date, married)
+    VALUES ('yaya', 'Yaya', NULL, 80000, 3.5, NULL, true);
