@@ -44,3 +44,11 @@ go get -u github.com/go-sql-driver/mysql
 
 8.  insert data into the table learn_go_database.user
     INSERT INTO learn_go_database.user(username, password) VALUES ('admin','admin');
+
+9.  create table learn_go_database.comments -> auto increment:
+    CREATE TABLE learn_go_database.comments (
+    	id		INT				NOT NULL AUTO_INCREMENT,
+        email	VARCHAR(100)	NOT NULL,
+    	comment	TEXT,
+        PRIMARY KEY (id)
+    ) ENGINE InnoDB;
