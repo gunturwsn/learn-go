@@ -1,4 +1,4 @@
-package learn_go_embed
+package test
 
 import (
 	"embed"
