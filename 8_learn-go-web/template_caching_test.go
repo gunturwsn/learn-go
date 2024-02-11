@@ -3,11 +3,11 @@ package learn_go_web
 import (
 	"embed"
 	"fmt"
+	"html/template"
 	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
-	"text/template"
 )
 
 //go:embed templates/*.gohtml
