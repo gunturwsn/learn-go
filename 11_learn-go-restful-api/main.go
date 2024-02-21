@@ -8,6 +8,7 @@ import (
 	"learn-go-restful-api/controller"
 	"learn-go-restful-api/exception"
 	"learn-go-restful-api/helper"
+	"learn-go-restful-api/middleware"
 	"learn-go-restful-api/repository"
 	"learn-go-restful-api/service"
 	"net/http"
@@ -31,7 +32,7 @@ func main() {
 
 	server := http.Server{
 		Addr:    "localhost:3000",
-		Handler: router,
+		Handler: middleware.NewAuthMiddleware(router),
 	}
 
 	err := server.ListenAndServe()
