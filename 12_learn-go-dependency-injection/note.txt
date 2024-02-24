@@ -26,3 +26,6 @@ Install Wire
 Check GOPATH:
 1. env | grep GOPATH
 2. cd /home/gunturwsn/Developments/GOLANG (Directory GOPATH)
+
+Running command line Google Wire:
+- wire gen packagename -> wire gen learn-go-dependency-injection/simple
