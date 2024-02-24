@@ -19,3 +19,10 @@ SELECT * FROM learn_go_restful_api_test.category;
 
 Module:
 1. go get github.com/google/wire
+
+Install Wire
+1. go install github.com/google/wire/cmd/wire@latest
+
+Check GOPATH:
+1. env | grep GOPATH
+2. cd /home/gunturwsn/Developments/GOLANG (Directory GOPATH)
