@@ -1,0 +1,21 @@
+CREATE DATABASE learn_go_restful_api;
+
+CREATE TABLE learn_go_restful_api.category(
+	id 		INTEGER PRIMARY KEY AUTO_INCREMENT,
+    name	VARCHAR(200) NOT NULL
+)ENGINE = InnoDB;
+
+SELECT * FROM learn_go_restful_api.category;
+
+CREATE DATABASE learn_go_restful_api_test;
+
+CREATE TABLE learn_go_restful_api_test.category(
+	id 		INTEGER PRIMARY KEY AUTO_INCREMENT,
+    name	VARCHAR(200) NOT NULL
+)ENGINE = InnoDB;
+
+SELECT * FROM learn_go_restful_api_test.category;
+
+
+Module:
+1. go get github.com/google/wire
